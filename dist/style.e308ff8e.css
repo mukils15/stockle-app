@@ -29,10 +29,11 @@ body {
 }
 
 .key-container {
-    max-width: 70vh;
+    max-width: 36%;
     width: auto;
     display: flex;
     flex-wrap: wrap;
+    left: 32%;
 }
 
 .key-container button {
