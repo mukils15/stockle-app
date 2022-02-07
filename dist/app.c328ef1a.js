@@ -127,7 +127,11 @@ var getWordle = function getWordle() {
   fetch('/word').then(function (response) {
     return response.json();
   }).then(function (json) {
-    wordle = '$' + json[Math.floor(Math.random() * json.length)];
+    var minute = 1000 * 60;
+    var hour = minute * 60;
+    var day = hour * 24;
+    var currDay = Math.round(Date.now() / day) % json.length;
+    wordle = '$' + json[currDay];
     console.log(wordle);
   }).catch(function (err) {
     return console.log(err);
@@ -464,7 +468,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64047" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64675" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

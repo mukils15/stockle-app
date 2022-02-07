@@ -8,7 +8,11 @@ const getWordle = () => {
     fetch('/word')
         .then(response => response.json())
         .then(json => {
-            wordle = '$' + json[Math.floor(Math.random() * json.length)]
+            const minute = 1000*60
+            const hour = minute * 60
+            const day = hour * 24
+            let currDay = Math.round(Date.now()/day) % json.length
+            wordle = '$' + json[currDay]
             console.log(wordle)
         })
         .catch(err => console.log(err)) 
