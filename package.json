@@ -4,11 +4,9 @@
   "description": "",
   "default": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel watch index.html",
-    "server": "node index.js",
-    "dev": "concurrently --kill-others \"npm run build\" \"npm run server\"",
-    "start:backend": "nodemon index.js"
+    "start" : "node index.js",
+    "build" : "node index.js",
+    "dev" : "node index.js"
   },
   "author": "",
   "license": "ISC",
