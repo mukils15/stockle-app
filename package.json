@@ -2,10 +2,12 @@
   "name": "wordle",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "default": "app.js",
   "scripts": {
-    "start:backend": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel watch index.html",
+    "server": "node index.js",
+    "dev": "concurrently --kill-others \"npm run build\" \"npm run server\""
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +15,8 @@
     "axios": "^0.25.0",
     "cors": "^2.8.5",
     "dotenv": "^14.3.2",
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "parcel": "^2.0.1",
+    "concurrently": "^6.4.0"
   }
 }
