@@ -1,4 +1,4 @@
-const PORT = process.env.PORT || 80
+const PORT = process.env.PORT || 8000
 const axios = require("axios").default
 const express = require("express")
 const cors = require("cors")
@@ -23,12 +23,13 @@ app.get('/word', (req, res) => {
         params: {scrIds: 'day_gainers', count: '100'},
         headers: {
             'x-rapidapi-host': 'stock-data-yahoo-finance-alternative.p.rapidapi.com',
-            'x-rapidapi-key': process.env.RAPID_API_KEY
+            'x-rapidapi-key': "770333f4c0msh7be6fd2d7a77eb3p100573jsnfa12e8fdba2f"
         }
     }
     axios.request(options).then((response) => {
+        let len = response.data['finance']['result'][0]['quotes'].length
         to_send = []
-        for (let i = 0; i < 100; i++){
+        for (let i = 0; i < len; i++){
             let poss = response.data['finance']['result'][0]['quotes'][i]['symbol']
             if (poss.length === 4){
                 to_send.push(response.data['finance']['result'][0]['quotes'][i]['symbol'])
@@ -51,7 +52,7 @@ app.get('/check', (req, res) => {
         params: {symbols: word},
         headers: {
             'x-rapidapi-host': 'stock-data-yahoo-finance-alternative.p.rapidapi.com',
-            'x-rapidapi-key': process.env.RAPID_API_KEY
+            'x-rapidapi-key': "770333f4c0msh7be6fd2d7a77eb3p100573jsnfa12e8fdba2f"
         }
     }
     axios.request(options).then((response) => {

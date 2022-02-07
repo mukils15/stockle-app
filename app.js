@@ -5,7 +5,7 @@ const messageDisplay = document.querySelector('.message-container')
 let wordle
 
 const getWordle = () => {
-    fetch('http://localhost:8000/word')
+    fetch('/word')
         .then(response => response.json())
         .then(json => {
             wordle = '$' + json[Math.floor(Math.random() * json.length)]
@@ -139,7 +139,7 @@ const deleteLetter = () => {
 const checkRow = () => {
     const guess = guessRows[currentRow].join('').substring(1)
     if (currentTile > 4) {
-        fetch(`http://localhost:8000/check/?word=${guess}`)
+        fetch(`/check/?word=${guess}`)
             .then(response => response.json())
             .then(json => {
                 if (json == 'Symbol not found') {
