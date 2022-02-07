@@ -18,37 +18,37 @@ body {
 
 .title-container {
     text-align: center;
-    width: 510px;
-    border-bottom: solid 1px #3a3a3c;
+    width: 100vh;
+    border-bottom: solid 0.5vh #3a3a3c;
 }
 
 .tile-container {
-    width: 330px;
-    margin-bottom: 30px;
+    width: 40vh;
+    margin-bottom: 1vh;
 }
 
 .key-container {
-    width: 510px;
+    width: 70vh;
     display: flex;
     flex-wrap: wrap;
 }
 
 .key-container button {
-    width: 43px;
-    height: 58px;
-    border-radius: 4px;
+    width: 6vh;
+    height: 7vh;
+    border-radius: 0.5vh;
     border: none;
     background-color: #818384;
-    margin: 4px;
+    margin: 0.5vh;
 }
 
 .key-container button:nth-child(11) {
-    margin-left: 30px;
+    margin-left: 4vh;
 }
 
 .key-container button:nth-child(20),
 .key-container button:nth-child(28) {
-    width: 68px;
+    width: 9vh;
 }
 
 .tile-container div {
@@ -56,25 +56,25 @@ body {
 }
 
 .tile-container .tile {
-    width: 62px;
-    height: 62px;
-    border: 2px solid#3a3a3c;
+    width: 9vh;
+    height: 9vh;
+    border: 0.25vh solid#3a3a3c;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2px;
+    margin: 0.25vh;
     background-color: #000000;
 }
 
 .message-container {
-    height: 30px;
+    height: 4vh;
 }
 
 .message-container p {
     background-color: #818384;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 1vh;
+    padding: 1vh;
     margin: 0;
 }
 
