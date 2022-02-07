@@ -4,8 +4,17 @@ const express = require("express")
 const cors = require("cors")
 require('dotenv').config()
 const app = express()
+const path = require("path")
 
 app.use(cors())
+app.use(express.static('dist'));
+
+app.get('/', (req, res) => {
+    console.log("ok");
+    console.log(req.url);
+    res.sendFile(path.join(__dirname, '/dist/index.html'))
+})
+
 
 app.get('/word', (req, res) => {
     const options = {
@@ -25,6 +34,7 @@ app.get('/word', (req, res) => {
                 to_send.push(response.data['finance']['result'][0]['quotes'][i]['symbol'])
             }
         }
+        console.log(to_send)
         res.json(to_send)
     }).catch((error) => {
         console.error(error)

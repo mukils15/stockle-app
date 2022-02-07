@@ -11,7 +11,7 @@ const getWordle = () => {
             wordle = '$' + json[Math.floor(Math.random() * json.length)]
             console.log(wordle)
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err)) 
 }
 getWordle()
 
@@ -237,7 +237,7 @@ const winMessage = (message) => {
     const innerDiv = document.createElement('div');
     const onclickDiv = document.createElement('button');
     const closeDiv = document.createElement('button');
-    let str_cont = "Bought low, sold high... \n" + (currentRow + 1) + "/" + "6 \n" 
+    let str_cont = "Stockle ... \n" + (currentRow + 1) + "/" + "6 \n" 
     for (let g = 0; g <= currentRow; g++){
         for (let j = 0; j < 5; j++){
             if (final_Rows[g][j] === 'b'){
